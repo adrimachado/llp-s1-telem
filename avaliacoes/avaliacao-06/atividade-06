@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main(void)
+{   setlocale(LC_ALL,"Portuguese");
+    FILE *arq;
+    char palavra[50];
+    int numero[2], i;
+
+    arq = fopen("Atividade 6 .txt", "w");
+
+    if(arq == NULL)
+    {
+        printf("Houve um erro na abertura do arquivo");
+        return 1;
+    }
+
+    printf("Escreva uma palavra:\n ");
+    gets(palavra);
+
+    fprintf(arq, "seu nome é:\n%s\n", palavra);
+    
+     for(i=0; i<2; i++){
+     	printf("Digite o numero:\n");
+     	scanf("%d",&numero[i]);
+     		
+	 }
+	 for(i=0; i<2; i++)
+     	fprintf(arq, "O %dº número digitado foi: %d\n", i+1,numero[i]);
+     	
+    fclose(arq);
+
+    printf("Voce salvou as informações no arquivo: Atividade 6!");
+
+    return(0);
+}
